@@ -74,6 +74,15 @@ class BackgroundCells extends React.Component {
           const { className, style } =
             (dayPropGetter && dayPropGetter(date)) || {}
 
+          const a11yClickHandler = _ => window.alert('wahoo!')
+          const keyboardFriendlyButton = this.props.selectable ? (
+            <button
+              onClick={a11yClickHandler}
+              className="create-event-allday"
+              aria-label={`Create all-day event for ${date.toDateString()}`}
+            />
+          ) : null
+
           return (
             <Wrapper key={index} value={date} range={range}>
               <div
@@ -87,7 +96,9 @@ class BackgroundCells extends React.Component {
                     dates.month(currentDate) !== dates.month(date) &&
                     'rbc-off-range-bg'
                 )}
-              />
+              >
+                {keyboardFriendlyButton}
+              </div>
             </Wrapper>
           )
         })}

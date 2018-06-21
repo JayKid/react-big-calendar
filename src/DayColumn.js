@@ -113,6 +113,15 @@ class DayColumn extends React.Component {
     const { className, style } = (dayPropGetter && dayPropGetter(max)) || {}
     const current = getNow()
 
+    const a11yClickHandler = _ => window.alert('wahoo!')
+    const keyboardFriendlyButton = this.props.selectable ? (
+      <button
+        onClick={a11yClickHandler}
+        className="create-event-column"
+        aria-label={`Create event for ${date.toDateString()}`}
+      />
+    ) : null
+
     return (
       <div
         style={style}
@@ -124,6 +133,7 @@ class DayColumn extends React.Component {
           dates.eq(date, current, 'day') && 'rbc-today'
         )}
       >
+        {keyboardFriendlyButton}
         {slotMetrics.groups.map((grp, idx) => (
           <TimeSlotGroup
             key={idx}

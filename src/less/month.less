@@ -102,6 +102,26 @@
   }
 }
 
+// Keyboard friendly elements
+.rbc-day-bg {
+  position: relative;
+}
+
+.create-event-allday {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.create-event-allday:hover, .create-event-allday:focus {
+    opacity: 0.2;
+    background: #3174ad;
+}
+
 .rbc-overlay {
   position: absolute;
   z-index: @event-zindex + 1;
