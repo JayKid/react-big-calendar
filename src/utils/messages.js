@@ -17,6 +17,8 @@ let defaultMessages = {
   agenda: 'agenda',
 
   showMore: total => `+${total} more`,
+  createEventLabel: date => `Create event for ${date}`,
+  createAllDayEventLabel: date => `Create all-day event for ${date}`,
 }
 
 export function set(key, msg) {

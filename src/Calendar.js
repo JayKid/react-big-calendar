@@ -686,6 +686,8 @@ class Calendar extends React.Component {
       time: PropTypes.node,
       event: PropTypes.node,
       showMore: PropTypes.func,
+      createEventLabel: PropTypes.func,
+      createAllDayEventLabel: PropTypes.func,
     }),
   }
 

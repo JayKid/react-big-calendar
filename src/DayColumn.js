@@ -103,6 +103,7 @@ class DayColumn extends React.Component {
       resource,
       timeSlotWrapperComponent,
       dayPropGetter,
+      messages,
     } = this.props
 
     let { slotMetrics } = this
@@ -118,7 +119,7 @@ class DayColumn extends React.Component {
       <button
         onClick={a11yClickHandler}
         className="create-event-column"
-        aria-label={`Create event for ${date.toDateString()}`}
+        aria-label={messages.createEventLabel(date.toDateString())}
       />
     ) : null
 

@@ -31,6 +31,8 @@ class BackgroundCells extends React.Component {
     range: PropTypes.arrayOf(PropTypes.instanceOf(Date)),
     rtl: PropTypes.bool,
     type: PropTypes.string,
+
+    messages: PropTypes.object,
   }
 
   constructor(props, context) {
@@ -63,6 +65,7 @@ class BackgroundCells extends React.Component {
       dayPropGetter,
       date: currentDate,
       getNow,
+      messages,
     } = this.props
     let { selecting, startIdx, endIdx } = this.state
     let current = getNow()
@@ -79,7 +82,7 @@ class BackgroundCells extends React.Component {
             <button
               onClick={a11yClickHandler}
               className="create-event-allday"
-              aria-label={`Create all-day event for ${date.toDateString()}`}
+              aria-label={messages.createAllDayEventLabel(date.toDateString())}
             />
           ) : null
 

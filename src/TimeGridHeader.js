@@ -51,6 +51,8 @@ class TimeGridHeader extends React.Component {
     onDoubleClickEvent: PropTypes.func,
     onDrillDown: PropTypes.func,
     getDrilldownView: PropTypes.func.isRequired,
+
+    messages: PropTypes.object,
   }
   static defaultProps = {
     headerComponent: Header,
@@ -148,6 +150,7 @@ class TimeGridHeader extends React.Component {
       eventComponent,
       dateCellWrapperComponent,
       eventWrapperComponent,
+      messages,
     } = this.props
 
     let style = {}
@@ -197,6 +200,7 @@ class TimeGridHeader extends React.Component {
             onDoubleClick={this.props.onDoubleClickEvent}
             onSelectSlot={this.props.onSelectSlot}
             longPressThreshold={this.props.longPressThreshold}
+            messages={messages}
           />
         </div>
       </div>

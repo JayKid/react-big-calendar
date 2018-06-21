@@ -43,6 +43,8 @@ const propTypes = {
   dateCellWrapperComponent: elementType,
   minRows: PropTypes.number.isRequired,
   maxRows: PropTypes.number.isRequired,
+
+  messages: PropTypes.object,
 }
 
 const defaultProps = {
@@ -149,6 +151,7 @@ class DateContentRow extends React.Component {
       onSelectStart,
       onSelectEnd,
       longPressThreshold,
+      messages,
       ...props
     } = this.props
 
@@ -187,6 +190,7 @@ class DateContentRow extends React.Component {
           onSelectSlot={this.handleSelectSlot}
           cellWrapperComponent={dateCellWrapperComponent}
           longPressThreshold={longPressThreshold}
+          messages={messages}
         />
 
         <div className="rbc-row-content">
