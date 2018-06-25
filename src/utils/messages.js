@@ -15,6 +15,7 @@ let defaultMessages = {
   tomorrow: 'tomorrow',
   today: 'today',
   agenda: 'agenda',
+  display_mode_label: 'Display mode',
 
   showMore: total => `+${total} more`,
   createEventLabel: date => `Create event for ${date}`,
