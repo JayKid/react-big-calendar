@@ -646,6 +646,7 @@ class Calendar extends React.Component {
       eventWrapper: elementType,
       dayWrapper: elementType,
       dateCellWrapper: elementType,
+      timeGutterHeader: elementType,
 
       toolbar: elementType,
 
@@ -844,12 +845,13 @@ class Calendar extends React.Component {
   handleNavigate = (action, newDate) => {
     let { view, date, getNow, onNavigate, ...props } = this.props
     let ViewComponent = this.getView()
+    let today = getNow()
 
     date = moveDate(ViewComponent, {
       ...props,
       action,
-      date: newDate || date,
-      today: getNow(),
+      date: newDate || date || today,
+      today,
     })
 
     onNavigate(date, view, action)
